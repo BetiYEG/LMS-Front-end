@@ -17,4 +17,4 @@ const CourseOverview = () => {
   );
 };
 
-export default CourseOverview; // ✅
+export default CourseOverview;

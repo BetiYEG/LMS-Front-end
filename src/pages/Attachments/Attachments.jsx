@@ -20,4 +20,4 @@ const Attachments = () => {
   );
 };
 
-export default Attachments; // ✅
+export default Attachments;

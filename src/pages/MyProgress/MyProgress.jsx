@@ -31,4 +31,4 @@ const MyProgress = () => {
   );
 };
 
-export default MyProgress; // ✅
+export default MyProgress;

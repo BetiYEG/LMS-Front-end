@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom'; // ← Added useLocation and fixed comma
+import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 
 const AppLayout = () => {
   const navigate = useNavigate();
@@ -14,27 +14,22 @@ const AppLayout = () => {
 
   const navItems = [
     { path: '/dashboard', label: 'Dashboard' },
-    { path: '/my-learning', label: 'Courses' },
-    { path: '/my-progress', label: 'Exams' },
-    { path: '/course-overview', label: 'Progress' },
+    { path: '/my-learning', label: 'My Learning' },
+    { path: '/my-progress', label: 'My Progress' },
   ];
 
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* ===== HEADER ===== */}
+    <div className="min-h-screen bg-[#F8F9FC]">
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo - Left */}
-            <div className="flex items-center gap-2">
-              <Link to="/dashboard" className="flex items-center gap-2">
-                <span className="text-xl sm:text-2xl font-bold text-gray-800">
-                  LMS <span className="text-blue-600">Platform</span>
-                </span>
-              </Link>
-            </div>
+            <Link to="/dashboard" className="flex items-center gap-2">
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">
+                LMS <span className="text-[#5B3CC4]">Platform</span>
+              </span>
+            </Link>
 
             <nav className="hidden md:flex items-center gap-6 lg:gap-8">
               {navItems.map((item) => (
@@ -43,8 +38,8 @@ const AppLayout = () => {
                   to={item.path}
                   className={`text-sm lg:text-base font-medium transition ${
                     isActive(item.path) 
-                      ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
-                      : 'text-gray-600 hover:text-blue-600'
+                      ? 'text-[#5B3CC4] border-b-2 border-[#5B3CC4] pb-1' 
+                      : 'text-gray-600 hover:text-[#5B3CC4]'
                   }`}
                 >
                   {item.label}
@@ -53,13 +48,12 @@ const AppLayout = () => {
             </nav>
             <div className="flex items-center gap-2 sm:gap-4">
               <div className="hidden sm:flex items-center gap-2">
-                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-8 h-8 bg-[#5B3CC4] rounded-full flex items-center justify-center text-white font-bold text-sm">
                   A
                 </div>
-                <span className="text-sm font-medium text-gray-700">
-                  Abbee
-                </span>
+                <span className="text-sm font-medium text-gray-700">Abbee</span>
               </div>
+
               <button
                 onClick={handleLogout}
                 className="hidden sm:flex text-gray-400 hover:text-red-600 transition p-1"
@@ -93,8 +87,8 @@ const AppLayout = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block px-4 py-2 rounded-lg text-base font-medium transition ${
                     isActive(item.path)
-                      ? 'bg-blue-50 text-blue-600'
-                      : 'text-gray-600 hover:bg-gray-50 hover:text-blue-600'
+                      ? 'bg-[#F0EDFF] text-[#5B3CC4]'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-[#5B3CC4]'
                   }`}
                 >
                   {item.label}
@@ -102,7 +96,7 @@ const AppLayout = () => {
               ))}
               <div className="border-t border-gray-200 pt-3 px-4 space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-10 h-10 bg-[#5B3CC4] rounded-full flex items-center justify-center text-white font-bold">
                     A
                   </div>
                   <div>

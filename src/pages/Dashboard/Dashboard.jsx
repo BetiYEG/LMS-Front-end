@@ -1,5 +1,5 @@
 import React from "react";
-import WelcomeBanner from "../components/dashboard/WelcomeBanner";
+import WelcomeBanner from "../../components/dashboard/WelcomeBanner";
 
 const Dashboard = () => {
   return (
@@ -18,7 +18,6 @@ const Dashboard = () => {
 
         <WelcomeBanner />
 
-        {/* Continue Learning */}
         <section className="mt-8">
           <div className="flex items-center justify-between mb-5">
             <h2 className="text-xl md:text-2xl font-bold">
@@ -45,7 +44,6 @@ const Dashboard = () => {
           </div>
         </section>
 
-        {/* Recommended */}
         <section className="mt-10">
 
           <div className="flex items-center justify-between mb-5">
