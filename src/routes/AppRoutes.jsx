@@ -1,111 +1,54 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Login from '../pages/Login';
-import Dashboard from '../pages/Dashboard';
-import MyLearning from '../pages/MyLearning';
-import MyProgress from '../pages/MyProgress';
-import CourseOverview from '../pages/CourseOverview';
-import LessonLearning from '../pages/LessonLearning';
-import ReadingContent from '../pages/ReadingContent';
-import Attachments from '../pages/Attachments';
-import AppLayout from '../layouts/AppLayout';
+// src/routes/AppRoutes.jsx
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import AppLayout from '@/components/layout/AppLayout'
 
-const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = localStorage.getItem('token');
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
-  }
-  return children;
-};
+// Import pages
+import Landing from '@/pages/Landing'
+import Login from '@/pages/Login'
+import Register from '@/pages/Register'
+import Dashboard from '@/pages/Dashboard'
+import MyCourses from '@/pages/MyCourses'
+import CourseOverview from '@/pages/CourseOverview'
+import LessonLearning from '@/pages/LessonLearning'
+import Assessments from '@/pages/Assessments'
+import Booklets from '@/pages/Booklets'
+import MyProgress from '@/pages/MyProgress'
+import Achievements from '@/pages/Achievements'
+import Notifications from '@/pages/Notifications'
+import Profile from '@/pages/Profile'
+import NotFound from '@/pages/NotFound'
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        {/* Public Routes */}
+        <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         
-        <Route 
-          path="/dashboard" 
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<Dashboard />} />
+        {/* Dashboard with Layout - NO PROTECTED ROUTE */}
+        <Route element={<AppLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/my-courses" element={<MyCourses />} />
+          <Route path="/course/:id" element={<CourseOverview />} />
+          <Route path="/course/:courseId/lesson/:lessonId" element={<LessonLearning />} />
+          <Route path="/assessments" element={<Assessments />} />
+          <Route path="/assessment/:id" element={<Assessments />} />
+          <Route path="/booklets" element={<Booklets />} />
+          <Route path="/booklet/:id" element={<Booklets />} />
+          <Route path="/progress" element={<MyProgress />} />
+          <Route path="/achievements" element={<Achievements />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
         
-        <Route 
-          path="/my-learning" 
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<MyLearning />} />
-        </Route>
-        
-        <Route 
-          path="/my-progress" 
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<MyProgress />} />
-        </Route>
-        
-        <Route 
-          path="/course-overview" 
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<CourseOverview />} />
-        </Route>
-        
-        <Route 
-          path="/lesson-learning" 
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<LessonLearning />} />
-        </Route>
-        
-        <Route 
-          path="/reading-content" 
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<ReadingContent />} />
-        </Route>
-        
-        <Route 
-          path="/attachments" 
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<Attachments />} />
-        </Route>
-
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* 404 Page */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default AppRoutes;
+export default AppRoutes
