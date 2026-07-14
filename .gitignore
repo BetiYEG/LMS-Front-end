@@ -1,0 +1,387 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+lms-frontend/
+│
+├── .env.example
+├── .env.development
+├── .env.production
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+├── components.json                              ← shadcn/ui config
+│
+├── vite.config.ts                               ← Vite config (TypeScript)
+├── tailwind.config.js                           ← Tailwind CSS config
+├── postcss.config.js                            ← PostCSS config
+├── tsconfig.json                                ← TypeScript config
+├── tsconfig.node.json                           ← Node TypeScript config
+├── eslint.config.js                             ← ESLint config
+├── .prettierrc                                  ← Prettier config
+│
+├── public/                                      ← Static assets
+│   ├── favicon.ico
+│   ├── logo.png
+│   └── robots.txt
+│
+└── src/
+    │
+    ├── api/                                     ← API layer (RTK Query)
+    │   ├── baseApi.ts                           ← Base RTK Query config
+    │   ├── authApi.ts                           ← Authentication endpoints
+    │   ├── courseApi.ts                         ← Course endpoints
+    │   ├── lessonApi.ts                         ← Lesson endpoints
+    │   ├── assessmentApi.ts                     ← Assessment endpoints
+    │   ├── bookletApi.ts                        ← Booklet endpoints
+    │   ├── progressApi.ts                       ← Progress endpoints
+    │   ├── notificationsApi.ts                  ← Notification endpoints
+    │   ├── userApi.ts                           ← User endpoints
+    │   └── index.ts                             ← Export all APIs
+    │
+    ├── assets/                                  ← Processed assets
+    │   ├── images/
+    │   │   ├── auth/
+    │   │   │   ├── photo1.png
+    │   │   │   ├── photocard.jpg
+    │   │   │   └── photologin.jpg
+    │   │   ├── courses/
+    │   │   ├── logo/
+    │   │   │   └── logo.png
+    │   │   └── icons/
+    │   ├── fonts/
+    │   └── styles/
+    │
+    ├── components/                              ← Reusable UI components
+    │   │
+    │   ├── ui/                                  ← shadcn/ui components
+    │   │   ├── button.tsx
+    │   │   ├── card.tsx
+    │   │   ├── input.tsx
+    │   │   ├── form.tsx
+    │   │   ├── dropdown-menu.tsx
+    │   │   ├── avatar.tsx
+    │   │   ├── progress.tsx
+    │   │   ├── badge.tsx
+    │   │   ├── separator.tsx
+    │   │   ├── tabs.tsx
+    │   │   ├── dialog.tsx
+    │   │   ├── toast.tsx
+    │   │   ├── alert.tsx
+    │   │   ├── skeleton.tsx
+    │   │   ├── slider.tsx
+    │   │   ├── label.tsx
+    │   │   ├── textarea.tsx
+    │   │   ├── checkbox.tsx
+    │   │   ├── select.tsx
+    │   │   ├── tooltip.tsx
+    │   │   ├── popover.tsx
+    │   │   ├── sheet.tsx
+    │   │   ├── switch.tsx
+    │   │   ├── radio-group.tsx
+    │   │   ├── accordion.tsx
+    │   │   ├── alert-dialog.tsx
+    │   │   ├── calendar.tsx
+    │   │   ├── command.tsx
+    │   │   ├── context-menu.tsx
+    │   │   ├── hover-card.tsx
+    │   │   ├── menubar.tsx
+    │   │   ├── navigation-menu.tsx
+    │   │   ├── pagination.tsx
+    │   │   ├── scroll-area.tsx
+    │   │   ├── sonner.tsx
+    │   │   ├── table.tsx
+    │   │   ├── toggle.tsx
+    │   │   ├── toggle-group.tsx
+    │   │   └── index.ts
+    │   │Button
+    │   ├── common/                              ← Shared components
+    │   │   ├── /
+    │   │   │   ├── Button.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Card/
+    │   │   │   ├── Card.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Input/
+    │   │   │   ├── Input.tsx
+    │   │   │   └── index.ts
+    │   │   ├── SearchBar/
+    │   │   │   ├── SearchBar.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Loader/
+    │   │   │   ├── Loader.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Breadcrumb/
+    │   │   │   ├── Breadcrumb.tsx
+    │   │   │   └── index.ts
+    │   │   ├── ErrorBoundary/
+    │   │   │   ├── ErrorBoundary.tsx
+    │   │   │   └── index.ts
+    │   │   ├── ThemeToggle/
+    │   │   │   ├── ThemeToggle.tsx
+    │   │   │   └── index.ts
+    │   │   └── index.ts
+    │   │
+    │   ├── layout/                              ← Layout components
+    │   │   ├── Header/
+    │   │   │   ├── Header.tsx
+    │   │   │   ├── Navigation.tsx
+    │   │   │   ├── UserMenu.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Footer/
+    │   │   │   ├── Footer.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Sidebar/
+    │   │   │   ├── Sidebar.tsx
+    │   │   │   └── index.ts
+    │   │   ├── AppLayout.tsx
+    │   │   └── index.ts
+    │   │
+    │   ├── auth/                                ← Authentication components
+    │   │   ├── LoginForm/
+    │   │   │   ├── LoginForm.tsx
+    │   │   │   └── index.ts
+    │   │   ├── RegisterForm/
+    │   │   │   ├── RegisterForm.tsx
+    │   │   │   └── index.ts
+    │   │   ├── ForgotPassword/
+    │   │   │   ├── ForgotPassword.tsx
+    │   │   │   └── index.ts
+    │   │   ├── ResetPassword/
+    │   │   │   ├── ResetPassword.tsx
+    │   │   │   └── index.ts
+    │   │   ├── ProtectedRoute.tsx
+    │   │   ├── PublicRoute.tsx
+    │   │   └── index.ts
+    │   │
+    │   ├── dashboard/                           ← Dashboard components
+    │   │   ├── WelcomeBanner/
+    │   │   │   ├── WelcomeBanner.tsx
+    │   │   │   └── index.ts
+    │   │   ├── StatsCard/
+    │   │   │   ├── StatsCard.tsx
+    │   │   │   └── index.ts
+    │   │   ├── QuickActions/
+    │   │   │   ├── QuickActions.tsx
+    │   │   │   └── index.ts
+    │   │   ├── RecentActivities/
+    │   │   │   ├── RecentActivities.tsx
+    │   │   │   └── index.ts
+    │   │   └── index.ts
+    │   │
+    │   ├── course/                              ← Course components
+    │   │   ├── CourseCard/
+    │   │   │   ├── CourseCard.tsx
+    │   │   │   └── index.ts
+    │   │   ├── CourseGrid/
+    │   │   │   ├── CourseGrid.tsx
+    │   │   │   └── index.ts
+    │   │   ├── CourseFilters/
+    │   │   │   ├── CourseFilters.tsx
+    │   │   │   └── index.ts
+    │   │   ├── CourseProgress/
+    │   │   │   ├── CourseProgress.tsx
+    │   │   │   └── index.ts
+    │   │   ├── ModuleList/
+    │   │   │   ├── ModuleList.tsx
+    │   │   │   └── index.ts
+    │   │   └── index.ts
+    │   │
+    │   ├── lesson/                              ← Lesson components
+    │   │   ├── LessonContent/
+    │   │   │   ├── LessonContent.tsx
+    │   │   │   └── index.ts
+    │   │   ├── VideoPlayer/
+    │   │   │   ├── VideoPlayer.tsx
+    │   │   │   └── index.ts
+    │   │   ├── TextContent/
+    │   │   │   ├── TextContent.tsx
+    │   │   │   └── index.ts
+    │   │   ├── QuizQuestion/
+    │   │   │   ├── QuizQuestion.tsx
+    │   │   │   └── index.ts
+    │   │   ├── AttachmentList/
+    │   │   │   ├── AttachmentList.tsx
+    │   │   │   └── index.ts
+    │   │   └── index.ts
+    │   │
+    │   ├── assessment/                          ← Assessment components
+    │   │   ├── AssessmentCard/
+    │   │   │   ├── AssessmentCard.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Question/
+    │   │   │   ├── Question.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Results/
+    │   │   │   ├── Results.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Statistics/
+    │   │   │   ├── Statistics.tsx
+    │   │   │   └── index.ts
+    │   │   └── index.ts
+    │   │
+    │   ├── booklet/                             ← Booklet components
+    │   │   ├── BookletCard/
+    │   │   │   ├── BookletCard.tsx
+    │   │   │   └── index.ts
+    │   │   ├── BookletQuestions/
+    │   │   │   ├── BookletQuestions.tsx
+    │   │   │   └── index.ts
+    │   │   └── index.ts
+    │   │
+    │   ├── progress/                            ← Progress components
+    │   │   ├── ProgressBar/
+    │   │   │   ├── ProgressBar.tsx
+    │   │   │   └── index.ts
+    │   │   ├── AchievementBadge/
+    │   │   │   ├── AchievementBadge.tsx
+    │   │   │   └── index.ts
+    │   │   ├── Leaderboard/
+    │   │   │   ├── Leaderboard.tsx
+    │   │   │   └── index.ts
+    │   │   └── index.ts
+    │   │
+    │   └── notifications/                       ← Notification components
+    │       ├── NotificationList/
+    │       │   ├── NotificationList.tsx
+    │       │   └── index.ts
+    │       ├── NotificationItem/
+    │       │   ├── NotificationItem.tsx
+    │       │   └── index.ts
+    │       └── index.ts
+    │
+    ├── /                                   ← Page components
+    │   ├─pages─ Landing/
+    │   │   ├── index.ts
+    │   │   └── Landing.tsx
+    │   ├── Login/
+    │   │   ├── index.ts
+    │   │   └── Login.tsx
+    │   ├── Register/
+    │   │   ├── index.ts
+    │   │   └── Register.tsx
+    │   ├── Dashboard/
+    │   │   ├── index.ts
+    │   │   └── Dashboard.tsx
+    │   ├── MyCourses/
+    │   │   ├── index.ts
+    │   │   └── MyCourses.tsx
+    │   ├── CourseOverview/
+    │   │   ├── index.ts
+    │   │   └── CourseOverview.tsx
+    │   ├── LessonLearning/
+    │   │   ├── index.ts
+    │   │   └── LessonLearning.tsx
+    │   ├── Assessments/
+    │   │   ├── index.ts
+    │   │   └── Assessments.tsx
+    │   ├── Booklets/
+    │   │   ├── index.ts
+    │   │   └── Booklets.tsx
+    │   ├── MyProgress/
+    │   │   ├── index.ts
+    │   │   └── MyProgress.tsx
+    │   ├── Achievements/
+    │   │   ├── index.ts
+    │   │   └── Achievements.tsx
+    │   ├── Notifications/
+    │   │   ├── index.ts
+    │   │   └── Notifications.tsx
+    │   ├── Profile/
+    │   │   ├── index.ts
+    │   │   └── Profile.tsx
+    │   ├── Settings/
+    │   │   ├── index.ts
+    │   │   └── Settings.tsx
+    │   └── NotFound/
+    │       ├── index.ts
+    │       └── NotFound.tsx
+    │
+    ├── hooks/                                   ← Custom React hooks
+    │   ├── useAuth.ts
+    │   ├── useCourses.ts
+    │   ├── useLessons.ts
+    │   ├── useProgress.ts
+    │   ├── useNotifications.ts
+    │   ├── useMediaQuery.ts
+    │   ├── useLocalStorage.ts
+    │   ├── useRecommendations.ts
+    │   ├── useDebounce.ts
+    │   ├── useToast.ts
+    │   └── index.ts
+    │
+    ├── store/                                   ← Redux store
+    │   ├── index.ts
+    │   ├── hooks.ts                             ← Typed Redux hooks
+    │   └── slices/
+    │       ├── authSlice.ts
+    │       ├── courseSlice.ts
+    │       ├── lessonSlice.ts
+    │       ├── progressSlice.ts
+    │       ├── uiSlice.ts
+    │       └── index.ts
+    │
+    ├── types/                                   ← TypeScript type definitions
+    │   ├── index.ts                             ← All types exported
+    │   ├── api.ts                               ← API response types
+    │   ├── auth.ts                              ← Auth types
+    │   ├── course.ts                            ← Course types
+    │   ├── lesson.ts                            ← Lesson types
+    │   ├── user.ts                              ← User types
+    │   ├── assessment.ts                        ← Assessment types
+    │   ├── progress.ts                          ← Progress types
+    │   ├── notification.ts                      ← Notification types
+    │   ├── props.ts                             ← Component props types
+    │   └── config.ts                            ← Config types
+    │
+    ├── utils/                                   ← Utility functions
+    │   ├── constants.ts
+    │   ├── helpers.ts
+    │   ├── validators.ts
+    │   ├── formatters.ts
+    │   ├── config.ts
+    │   ├── colors.ts                            ← Color system
+    │   ├── colorSchemes.ts                      ← Color schemes
+    │   └── index.ts
+    │
+    ├── lib/                                     ← Library utilities
+    │   └── utils.ts                             ← cn() function for shadcn
+    │
+    ├── styles/                                  ← Global styles
+    │   ├── globals.css
+    │   ├── themes.ts
+    │   └── animations.css
+    │
+    ├── routes/                                  ← Routing configuration
+    │   └── AppRoutes.tsx
+    │
+    ├── providers/                               ← Providers
+    │   ├── ThemeProvider.tsx
+    │   ├── ColorProvider.tsx
+    │   └── index.ts
+    │
+    ├── App.tsx
+    ├── main.tsx
+    └── vite-env.d.ts
